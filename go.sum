@@ -88,6 +88,8 @@ github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZm
 github.com/dimchansky/utfbom v1.1.0/go.mod h1:rO41eb7gLfo8SF1jd9F8HplJm1Fewwi4mQvIirEdv+8=
 github.com/disresc/lib v0.0.0-20191216155224-4e699beba30d h1:niJZ8/2jTMBx/jFrfhgo7rIkl4uSWyAsU5HWwUANlzU=
 github.com/disresc/lib v0.0.0-20191216155224-4e699beba30d/go.mod h1:1LXbHhUMroGs7YqiubUEvw3i5kpcXHZXTTxflicwHP4=
+github.com/disresc/lib v0.0.0-20191217115346-ccbf3746b95e h1:XvI9jZU51AO7EKIq0h8OrYr5wIs3F/mpUcAxJ6sffNQ=
+github.com/disresc/lib v0.0.0-20191217115346-ccbf3746b95e/go.mod h1:1LXbHhUMroGs7YqiubUEvw3i5kpcXHZXTTxflicwHP4=
 github.com/dnaeon/go-vcr v0.0.0-20180814043457-aafff18a5cc2/go.mod h1:aBB1+wY4s93YsC3HHjMBMrwTj2R9FHDzUr9KyGc8n1E=
 github.com/dnsimple/dnsimple-go v0.30.0/go.mod h1:O5TJ0/U6r7AfT8niYNlmohpLbCSG+c71tQlGr9SeGrg=
 github.com/docker/distribution v2.7.1+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
