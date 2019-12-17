@@ -11,6 +11,6 @@ require (
 	github.com/onsi/gomega v1.5.0 // indirect
 )
 
-// replace github.com/disresc/lib v0.0.0-20191202124906-9d73ef7f963f => /home/christopher/Documents/UNI/workspace/kvmtop-modules/github.com/disresc/lib
+// replace github.com/disresc/lib v0.0.0-20191216155224-4e699beba30d => /home/christopher/Documents/UNI/workspace/kvmtop-modules/github.com/disresc/lib
 
 // replace github.com/micro/go-micro v1.17.1 => /home/christopher/Documents/UNI/workspace/kvmtop-modules/github.com/cha87de/go-micro

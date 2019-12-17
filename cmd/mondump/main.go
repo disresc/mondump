@@ -10,7 +10,12 @@ import (
 )
 
 func handle(event *drModels.Event) {
-	fmt.Printf("New Event: %v", event)
+	time := time.Unix(event.GetTimestamp(), 0)
+	fmt.Printf("Event from %s at %s\n", event.GetSource(), time)
+	for _, item := range event.GetItems() {
+		fmt.Printf("\t%s\t%s\t%s\n", item.GetTransmitter(), item.GetMetric(), item.GetValue())
+	}
+	fmt.Printf("\n")
 }
 
 func main() {
@@ -20,39 +25,12 @@ func main() {
 	}
 
 	receiver := drReceiver.NewService(name)
+	receiver.RegisterData("hosts", "kvmtop-net", 10)
+	//receiver.RegisterData("ves", "kvmtop-cpu", 10)
 	receiver.Start()
-
-	sendPeriodicRequest(receiver, "hosts", "kvmtop-cpu")
-	sendPeriodicRequest(receiver, "ves", "kvmtop-cpu")
 
 	for {
 		event := <-receiver.EventChannel()
 		handle(event)
 	}
-}
-
-func sendPeriodicRequest(receiver *drReceiver.Service, source string, transmitter string) {
-	ticker := time.NewTicker(5 * time.Second)
-	//done := make(chan bool)
-	sendRequest(receiver, source, transmitter)
-	go func() {
-		for {
-			select {
-			//case <-done:
-			//	return
-			case <-ticker.C:
-				sendRequest(receiver, source, transmitter)
-			}
-		}
-	}()
-}
-
-func sendRequest(receiver *drReceiver.Service, source string, transmitter string) {
-	request := drModels.Request{
-		Timeout:     15,
-		Source:      source,
-		Transmitter: transmitter,
-		Interval:    10,
-	}
-	receiver.Request(&request)
 }
